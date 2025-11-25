@@ -1,5 +1,7 @@
+#!/bin/python3
+
+
 from pysat.solvers import Glucose42
-import subprocess
 from argparse import ArgumentParser
 import sys
 
