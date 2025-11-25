@@ -1,6 +1,5 @@
 #!/bin/python3
 
-
 from pysat.solvers import Glucose42
 from argparse import ArgumentParser
 import sys
