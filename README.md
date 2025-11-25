@@ -6,7 +6,7 @@ This repository contains a solver to the Hamiltionian cycle problem using SAT-so
 
 The Hamiltonian Path problem is a decision problem asking whether a given graph contains a path that visits each vertex exactly once. 
 An example of a valid input format would be a first line with positive integers $n$ (number of vertices) and $m$ (number of edges), followed by $m$ lines.
-On the $i$-th line, there are positive integers $0<=x,y<n$, denoting that an edge exists between $x$ and $y$.
+On the $i$-th line, there are positive integers $0\leq x,y<n$, denoting that an edge exists between $x$ and $y$.
 
 **Example**:
 ```
