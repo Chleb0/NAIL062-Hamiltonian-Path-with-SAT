@@ -6,7 +6,7 @@ This repository contains a solver to the Hamiltionian cycle problem using SAT-so
 
 The Hamiltonian Path problem is a decision problem asking whether a given graph contains a path that visits each vertex exactly once. 
 An example of a valid input format would be a first line with positive integers $n$ (number of vertices) and $m$ (number of edges), followed by $m$ lines.
-On the $i$-th line, there are positive integers $0\leq x,y<n$, denoting that an edge exists between $x$ and $y$.
+On the $i$-th line, there are positive integers $0\leq x,y<n$, denoting that an edge exists between $x$ and $y$. Please note that the vertices are $0$-indexed.
 
 **Example**:
 ```
@@ -20,7 +20,18 @@ On the $i$-th line, there are positive integers $0\leq x,y<n$, denoting that an 
 
 ## SAT Encoding
 
-The problem is encoded with exactly $n^2$ variables.
+This section describes the way the problem is translated into a SAT problem.
+
+### Variables
+
+The problem is encoded with exactly $n^2$ variables, that can be arranged in a $n*n$ matrix $X$.
+If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycle, we visit vertex $i$.
+
+### Clauses
+
+We must ensure that exactly one of $X_{i,*}$ is true and exactly one of $X_{*,j}$ is true.
+Therefore, we need to ensure at least one is true, so we create clauses:
+$\bigwedge_{v}$ 
 
 ## Usage
 
@@ -45,10 +56,14 @@ pip install python-sat
 Next, you will need to make the program executable.
 
 To do this, run:
-`chmod +x solve.py`
+```
+chmod +x solve.py
+```
 
 Alternatively, you can run the program directly with python, like so:
-`python3 solve.py`
+```
+python3 solve.py
+```
 
 ### Prepare the input
 
