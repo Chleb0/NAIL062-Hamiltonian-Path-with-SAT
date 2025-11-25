@@ -29,7 +29,7 @@ If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycl
 
 ### Clauses
 
-We must ensure that exactly one of $X_{i,*}$ is true and exactly one of $X_{*,j}$ is true.
+We must ensure that exactly one of $X_{i,\star}$ is true and exactly one of $X_{*,j}$ is true.
 Therefore, we need to ensure at least one is true, so we create clauses:
 $\bigwedge_{v}$ 
 
