@@ -25,11 +25,11 @@ This section describes the way the problem is translated into a SAT problem.
 ### Variables
 
 The problem is encoded with exactly $n^2$ variables, that can be arranged in a $n*n$ matrix $X$.
-If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycle, we visit vertex $i$.
+If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycle, we visit vertex $j$.
 
 ### Clauses
 
-We must ensure that exactly one of $X_{i,\star}$ is true and exactly one of $X_{*,j}$ is true.
+We must ensure that exactly one of $X_{i,\star}$ is true and exactly one of $X_{\star,j}$ is true.
 Therefore, we need to ensure at least one is true, so we create clauses:
 $\bigwedge_{v}$ 
 
