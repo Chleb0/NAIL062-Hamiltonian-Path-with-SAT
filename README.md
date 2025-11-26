@@ -51,7 +51,7 @@ This forces every pair in of literals in the same row or column to not be both t
 
 Finally, we need to ensure that no $2$ vertices are adjancent in the path if they are not connected by an edge. So if two vertices $x,y$ are not connected by an edge, we write:
 
-$\bigwedge_{r=0}^{n-1} \lnot X_{r,x} \lor \lnot X_{(r+1) mod n,y} \land \lnot X_{(r+1)%n,x} \lor \lnot X_{r,y}$
+$\bigwedge_{r=0}^{n-1} \lnot X_{r,x} \lor \lnot X_{(r+1) \bmod n,y} \land \lnot X_{(r+1) \bmod n,x} \lor \lnot X_{r,y}$
 
 
 ### Proof
