@@ -31,7 +31,32 @@ If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycl
 
 We must ensure that exactly one of $X_{i,\star}$ is true and exactly one of $X_{\star,j}$ is true.
 Therefore, we need to ensure at least one is true, so we create clauses:
+
 $\bigwedge_{i=0}^{n-1} \bigvee_{j=0}^{n-1} X_{i,j}$ 
+
+and: 
+
+$\bigwedge_{j=0}^{n-1} \bigvee_{i=0}^{n-1} X_{i,j}$
+
+Now we only need to ensure that at most one clause is true in each column and row. So we create:
+
+$\bigwedge_{r=0}^{n-1} \bigwedge_{i < j}^{n-1} \lnot X_{r,i} \lor \lnot X_{r,j}$
+
+and:
+
+$\bigwedge_{c=0}^{n-1} \bigwedge_{i < j}^{n-1} \lnot X_{i,c} \lor \lnot X_{j,c}$
+
+This forces every pair in of literals in the same row or column to not be both true.
+
+
+Finally, we need to ensure that no $2$ vertices are adjancent in the path if they are not connected by an edge. So if two vertices $x,y$ are not connected by an edge, we write:
+
+$\bigwedge_{r=0}^{n-1} \lnot X_{r,x} \lor \lnot X_{(r+1) mod n,y} \land \lnot X_{(r+1)%n,x} \lor \lnot X_{r,y}$
+
+
+### Proof
+
+A model of this thoeory corresponds to
 
 ## Usage
 
