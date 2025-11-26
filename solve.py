@@ -86,7 +86,6 @@ class HamPathSolver:
 
     def decode_model(self)->list:
         solution = self.solver.get_model()
-        print(solution)
         path = []
 
         for cycle in range(self.vertices):

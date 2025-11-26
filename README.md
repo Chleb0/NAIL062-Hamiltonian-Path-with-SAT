@@ -139,9 +139,9 @@ Specifies the output file in which the program will write the solution.
 #### **`-d`, `--dimacs`**  
 Enables DIMACS CNF output mode.
 
-- When this flag is set, the solver **ignores the `-o` option**.
+- When this flag is set, the solver **ignores the `-o` option**. The program also **doesn't output a solution to the problem, only the encoding!!!**
 - Instead, it writes the generated SAT encoding to:
-    formula.cnf
+    `formula.cnf`
 - Example:
     ```
     ./solve.py -d
