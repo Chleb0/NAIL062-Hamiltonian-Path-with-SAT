@@ -56,7 +56,9 @@ $\bigwedge_{r=0}^{n-1} \lnot X_{r,x} \lor \lnot X_{(r+1) \bmod n,y} \land \lnot 
 
 ### Proof
 
-A model of this thoeory corresponds to
+A model of this thoeory corresponds to a Hamiltionian path, because each vertex is visited exactly once and no two vertices are neighboring on the path if there is no edge connecting them.
+
+---
 
 ## Usage
 
@@ -92,4 +94,55 @@ python3 solve.py
 
 ### Prepare the input
 
-Prepare the problem you want the program to sovle
+Prepare the problem you want the program to solve. The input should be in the format you see in ***Example***.
+
+### Run the solver
+
+Run the solver either with
+
+```
+./solve.py
+```
+
+Or alternatively,
+
+```
+python3 solve.py
+```
+
+The program supports the following command-line options:
+
+#### **`-i`, `--inputfile`**  
+Specifies the input file.
+
+- **Default:** `stdin`  
+- If no input file is provided, the program will read the problem from **standard input**.
+- Example:
+    ```
+    ./solve.py -i instance.txt
+    ```
+
+---
+
+#### **`-o`, `--outputfile`**  
+Specifies the output file in which the program will write the solution.
+
+- **Default:** `stdout`  
+- If no file is provided, the solver prints its output to **standard output**.
+- Example:
+    ```
+    ./solve.py -o result.txt
+    ```
+
+---
+
+#### **`-d`, `--dimacs`**  
+Enables DIMACS CNF output mode.
+
+- When this flag is set, the solver **ignores the `-o` option**.
+- Instead, it writes the generated SAT encoding to:
+    formula.cnf
+- Example:
+    ```
+    ./solve.py -d
+    ```
