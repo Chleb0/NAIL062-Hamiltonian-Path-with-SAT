@@ -31,7 +31,7 @@ If $X_{i,j}$ is true, it denotes that in the $i$-th step of the Hamiltonian Cycl
 
 We must ensure that exactly one of $X_{i,\star}$ is true and exactly one of $X_{\star,j}$ is true.
 Therefore, we need to ensure at least one is true, so we create clauses:
-$\bigwedge_{v}$ 
+$\bigwedge_{i=0}^{n-1} \bigvee_{j=0}^{n-1} X_{i,j}$ 
 
 ## Usage
 
